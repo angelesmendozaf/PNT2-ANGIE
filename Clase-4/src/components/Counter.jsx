@@ -6,11 +6,18 @@ export const Counter = () => {
   const [contador, setContador] = useState(0)
 
     const incrementarContador= (e) => {
-      setContador(contador + 1);
+       
+      if(contador <10){
+        setContador(contador + 1);
+      }
+     
 }
 
 const decrementarContador=(e)=> {
-  setContador(contador-1);
+  if(contador>0){
+    setContador(contador-1);
+  }
+  
 }
 
     // no se pueda incrementar mas de 10
