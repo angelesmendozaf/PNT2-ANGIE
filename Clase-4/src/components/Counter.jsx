@@ -1,27 +1,12 @@
 import React, { useState } from 'react';
+import { useCounter } from '../hooks/useCounter';
 
 
 export const Counter = () => {
+// creo las referencias(variables) donde voy a guardar los datos que me llegan del hook para luego usar en el JSX
+ const {incrementarContador,decrementarContador,contador} =useCounter();
 
-  const [contador, setContador] = useState(0)
-
-    const incrementarContador= (e) => {
-       
-      if(contador <10){
-        setContador(contador + 1);
-      }
-     
-}
-
-const decrementarContador=(e)=> {
-  if(contador>0){
-    setContador(contador-1);
-  }
-  
-}
-
-    // no se pueda incrementar mas de 10
-    // no se pueda reducir mas de 0
+   
   return (
     <div>
         <h2>Contador: {contador}</h2>
