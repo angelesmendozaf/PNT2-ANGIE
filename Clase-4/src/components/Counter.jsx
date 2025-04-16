@@ -1,15 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react';
+
 
 export const Counter = () => {
 
+  const [contador, setContador] = useState(0)
+
+    const incrementarContador= (e) => {
+      setContador(contador + 1);
+}
+
+const decrementarContador=(e)=> {
+  setContador(contador-1);
+}
 
     // no se pueda incrementar mas de 10
     // no se pueda reducir mas de 0
   return (
     <div>
-        <h2>Contador: 0</h2>
-        <button>+1</button>
-        <button>-1</button>
+        <h2>Contador: {contador}</h2>
+        <button onClick={incrementarContador}>+1</button>
+        <button onClick={decrementarContador}>-1</button>
     </div>
   )
-}
+} 
